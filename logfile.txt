@@ -1,0 +1,350 @@
+[2023-09-29T18:03:59.475+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Landing_TriPOD_full_load.task_group_0.copy_CUSTOMERS_to_snowflake manual__2023-09-29T18:03:14.823956+00:00 [queued]>
+[2023-09-29T18:03:59.526+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: Landing_TriPOD_full_load.task_group_0.copy_CUSTOMERS_to_snowflake manual__2023-09-29T18:03:14.823956+00:00 [queued]>
+[2023-09-29T18:03:59.527+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-09-29T18:03:59.527+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2023-09-29T18:03:59.527+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-09-29T18:03:59.556+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): task_group_0.copy_CUSTOMERS_to_snowflake> on 2023-09-29 18:03:14.823956+00:00
+[2023-09-29T18:03:59.573+0000] {standard_task_runner.py:55} INFO - Started process 3126937 to run task
+[2023-09-29T18:03:59.585+0000] {standard_task_runner.py:82} INFO - Running: ['airflow', 'tasks', 'run', 'Landing_TriPOD_full_load', 'task_group_0.copy_CUSTOMERS_to_snowflake', 'manual__2023-09-29T18:03:14.823956+00:00', '--job-id', '6067', '--raw', '--subdir', 'DAGS_FOLDER/tricon_residential/external/Landing/Tripod/Tripod_Pull_Selected_Tables.py', '--cfg-path', '/tmp/tmpadbbhmuy']
+[2023-09-29T18:03:59.592+0000] {standard_task_runner.py:83} INFO - Job 6067: Subtask task_group_0.copy_CUSTOMERS_to_snowflake
+[2023-09-29T18:03:59.839+0000] {task_command.py:388} INFO - Running <TaskInstance: Landing_TriPOD_full_load.task_group_0.copy_CUSTOMERS_to_snowflake manual__2023-09-29T18:03:14.823956+00:00 [running]> on host ip-10-21-1-38.us-west-2.compute.internal
+[2023-09-29T18:04:00.085+0000] {taskinstance.py:1507} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Landing_TriPOD_full_load
+AIRFLOW_CTX_TASK_ID=task_group_0.copy_CUSTOMERS_to_snowflake
+AIRFLOW_CTX_EXECUTION_DATE=2023-09-29T18:03:14.823956+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-09-29T18:03:14.823956+00:00
+[2023-09-29T18:04:00.086+0000] {Tripod_Pull_Selected_Tables.py:68} INFO - read Tripod table schema for the table -> Customers
+[2023-09-29T18:04:00.107+0000] {base.py:73} INFO - Using connection ID 'mysql_conn_Tripod' for task execution.
+[2023-09-29T18:04:00.109+0000] {logging_mixin.py:137} INFO - mysql_connection without tunnel  {'host': 'tripod-production-cluster.cluster-ro-c6rafjqy8ia8.us-west-2.rds.amazonaws.com', 'port': 3306, 'username': 'appuser-readonly', 'password': '***', 'schema': 'production', 'database': 'production'}
+[2023-09-29T18:04:00.142+0000] {retrive_conn.py:565} INFO - mysql connection completed.. 
+[2023-09-29T18:04:00.143+0000] {logging_mixin.py:137} INFO - Mysql server connection closed
+[2023-09-29T18:04:00.143+0000] {Tripod_Pull_Selected_Tables.py:55} INFO - create Tripod connection function is running
+[2023-09-29T18:04:00.157+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-09-29T18:04:00.158+0000] {logging_mixin.py:137} INFO - conn.get_extra ---> {"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}
+[2023-09-29T18:04:00.161+0000] {logging_mixin.py:137} INFO - snowflake_conn {'account': 'sta98695', 'user': 'devops', 'password': '***', 'warehouse': 'COMPUTE_WH', 'database': 'DEV', 'schema': 'LANDING', 'config_tables_to_be_replicatedg': None, 'landing_table_prefix': 'WP', 'role': 'ACCOUNTADMIN', '_extras': '{"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}'}
+[2023-09-29T18:04:00.161+0000] {connection.py:280} INFO - Snowflake Connector for Python Version: 3.0.0, Python Version: 3.10.12, Platform: Linux-6.2.0-1011-aws-x86_64-with-glibc2.35
+[2023-09-29T18:04:00.162+0000] {connection.py:974} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-09-29T18:04:00.162+0000] {connection.py:992} INFO - Setting use_openssl_only mode to False
+[2023-09-29T18:04:01.161+0000] {retrive_conn.py:238} INFO - snowflake connection completed.. snowflake_conn
+[2023-09-29T18:04:01.161+0000] {logging_mixin.py:137} INFO - connection closed
+[2023-09-29T18:04:01.161+0000] {Tripod_Pull_Selected_Tables.py:43} INFO - create snowflake connection function is running
+[2023-09-29T18:04:01.161+0000] {retrive_conn.py:617} INFO - connection is active and get the table schema.. 
+[2023-09-29T18:04:01.165+0000] {retrive_conn.py:388} INFO - connection is active.. 
+[2023-09-29T18:04:01.165+0000] {retrive_conn.py:389} INFO - converting mysql table schema [('CustomerKey', 'bigint(20)', 'NO', 'PRI', None, 'auto_increment'), ('DateCreated', 'datetime', 'NO', '', None, ''), ('IsMigrated', 'bit(1)', 'NO', '', None, ''), ('ProspectKey', 'bigint(20)', 'YES', 'MUL', None, ''), ('RentalApplicantKey', 'bigint(20)', 'YES', 'MUL', None, ''), ('ResidentKey', 'bigint(20)', 'YES', 'MUL', None, ''), ('IsActive', 'bit(1)', 'NO', '', None, ''), ('PaymentPlatform', 'int(11)', 'NO', '', '0', '')]
+[2023-09-29T18:04:01.165+0000] {logging_mixin.py:137} INFO - convert mysql table schema to snowflake table schema completed.. TRIPOD_CUSTOMERS
+[2023-09-29T18:04:01.165+0000] {logging_mixin.py:137} INFO - create_snowflake_table
+[2023-09-29T18:04:01.165+0000] {retrive_conn.py:452} INFO - create snowflake connection is active.. 
+[2023-09-29T18:04:01.165+0000] {retrive_conn.py:453} INFO - create snowflake table CREATE OR REPLACE TABLE TRIPOD_CUSTOMERS (
+    CustomerKey BIGINT,
+    DateCreated TIMESTAMP_NTZ,
+    IsMigrated BOOLEAN,
+    ProspectKey BIGINT,
+    RentalApplicantKey BIGINT,
+    ResidentKey BIGINT,
+    IsActive BOOLEAN,
+    PaymentPlatform INT
+)
+[2023-09-29T18:04:01.166+0000] {cursor.py:727} INFO - query: [CREATE OR REPLACE TABLE TRIPOD_CUSTOMERS ( CustomerKey BIGINT, DateCreated TIMES...]
+[2023-09-29T18:04:01.343+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:01.344+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:01.344+0000] {retrive_conn.py:456} INFO - [('Table TRIPOD_CUSTOMERS successfully created.',)]
+[2023-09-29T18:04:01.344+0000] {retrive_conn.py:457} INFO - create snowflake table completed [] 
+[2023-09-29T18:04:01.344+0000] {snowflake_interaction.py:419} INFO - connection is active and reading data from mysql table.. Customers 
+[2023-09-29T18:04:01.345+0000] {snowflake_interaction.py:421} INFO - Executing SQL query --> SELECT * FROM Customers ;
+[2023-09-29T18:04:01.347+0000] {warnings.py:109} WARNING - /home/ubuntu/airflow/dags/tricon_residential/external/common_package/snowflake_interaction.py:426: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  for chunk in pd.read_sql(sql_query, mysql_hook, chunksize=chunksize):
+
+[2023-09-29T18:04:03.208+0000] {snowflake_interaction.py:427} INFO - Data fetch and each Chunk 1 --> (100000, 8)
+[2023-09-29T18:04:03.208+0000] {snowflake_interaction.py:429} INFO - Data fetched for the Chunk 1 --> (100000, 8)
+[2023-09-29T18:04:03.247+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-09-29T18:04:03.248+0000] {logging_mixin.py:137} INFO - conn.get_extra ---> {"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}
+[2023-09-29T18:04:03.252+0000] {logging_mixin.py:137} INFO - snowflake_conn {'account': 'sta98695', 'user': 'devops', 'password': '***', 'warehouse': 'COMPUTE_WH', 'database': 'DEV', 'schema': 'LANDING', 'config_tables_to_be_replicatedg': None, 'landing_table_prefix': 'WP', '_extras': '{"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}'}
+[2023-09-29T18:04:03.252+0000] {connection.py:280} INFO - Snowflake Connector for Python Version: 3.0.0, Python Version: 3.10.12, Platform: Linux-6.2.0-1011-aws-x86_64-with-glibc2.35
+[2023-09-29T18:04:03.252+0000] {connection.py:974} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-09-29T18:04:03.689+0000] {snowflake_interaction.py:52} INFO - snowflake connection completed.. snowflake_conn
+[2023-09-29T18:04:03.689+0000] {logging_mixin.py:137} INFO - connection closed
+[2023-09-29T18:04:03.690+0000] {retrive_conn.py:483} INFO - data cleanup process started.. (100000, 8)
+[2023-09-29T18:04:03.692+0000] {retrive_conn.py:296} INFO - fixing date columns.. CUSTOMERKEY                    int64
+DATECREATED           datetime64[ns]
+ISMIGRATED                     int64
+PROSPECTKEY                  float64
+RENTALAPPLICANTKEY           float64
+RESIDENTKEY                  float64
+ISACTIVE                       int64
+PAYMENTPLATFORM                int64
+dtype: object
+[2023-09-29T18:04:03.693+0000] {retrive_conn.py:301} INFO - fixing date cols columns.. ['DATECREATED']
+[2023-09-29T18:04:05.188+0000] {retrive_conn.py:307} INFO - fixing date columns.. CUSTOMERKEY                         int64
+DATECREATED           datetime64[ns, UTC]
+ISMIGRATED                          int64
+PROSPECTKEY                       float64
+RENTALAPPLICANTKEY                float64
+RESIDENTKEY                       float64
+ISACTIVE                            int64
+PAYMENTPLATFORM                     int64
+dtype: object
+[2023-09-29T18:04:05.189+0000] {retrive_conn.py:579} INFO - fixing boolean columns..  IsMigrated  IsActive  
+[2023-09-29T18:04:06.113+0000] {retrive_conn.py:595} INFO - fixing varchar columns..  
+[2023-09-29T18:04:09.067+0000] {retrive_conn.py:514} INFO - data cleanup completed and number of records in table 100000 and number of columns 8
+[2023-09-29T18:04:09.067+0000] {cursor.py:727} INFO - query: [CREATE TEMP STAGE /* Python:snowflake.connector.pandas_tools.write_pandas() */ "...]
+[2023-09-29T18:04:09.167+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:09.167+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:10.279+0000] {cursor.py:727} INFO - query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+[2023-09-29T18:04:10.629+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:11.336+0000] {cursor.py:727} INFO - query: [COPY INTO "TRIPOD_CUSTOMERS" /* Python:snowflake.connector.pandas_tools.write_pa...]
+[2023-09-29T18:04:12.640+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:12.641+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:12.641+0000] {snowflake_interaction.py:483} INFO - Data written to TRIPOD_CUSTOMERS table successfully True -- number of chunks 1 -- total rows 100000
+[2023-09-29T18:04:12.641+0000] {snowflake_interaction.py:445} INFO - Data written to TRIPOD_CUSTOMERS table
+[2023-09-29T18:04:12.642+0000] {snowflake_interaction.py:447} INFO - Written data to Snowflake table --> Customers --> chunk 2
+[2023-09-29T18:04:12.642+0000] {snowflake_interaction.py:448} INFO - next set of data will be fetched from 200000 row
+[2023-09-29T18:04:12.642+0000] {snowflake_interaction.py:450} INFO - data load for table complete  --> Customers
+[2023-09-29T18:04:15.556+0000] {snowflake_interaction.py:427} INFO - Data fetch and each Chunk 2 --> (100000, 8)
+[2023-09-29T18:04:15.557+0000] {snowflake_interaction.py:429} INFO - Data fetched for the Chunk 2 --> (100000, 8)
+[2023-09-29T18:04:15.590+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-09-29T18:04:15.590+0000] {logging_mixin.py:137} INFO - conn.get_extra ---> {"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}
+[2023-09-29T18:04:15.593+0000] {logging_mixin.py:137} INFO - snowflake_conn {'account': 'sta98695', 'user': 'devops', 'password': '***', 'warehouse': 'COMPUTE_WH', 'database': 'DEV', 'schema': 'LANDING', 'config_tables_to_be_replicatedg': None, 'landing_table_prefix': 'WP', '_extras': '{"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}'}
+[2023-09-29T18:04:15.593+0000] {connection.py:280} INFO - Snowflake Connector for Python Version: 3.0.0, Python Version: 3.10.12, Platform: Linux-6.2.0-1011-aws-x86_64-with-glibc2.35
+[2023-09-29T18:04:15.593+0000] {connection.py:974} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-09-29T18:04:16.112+0000] {snowflake_interaction.py:52} INFO - snowflake connection completed.. snowflake_conn
+[2023-09-29T18:04:16.112+0000] {logging_mixin.py:137} INFO - connection closed
+[2023-09-29T18:04:16.113+0000] {retrive_conn.py:483} INFO - data cleanup process started.. (100000, 8)
+[2023-09-29T18:04:16.114+0000] {retrive_conn.py:296} INFO - fixing date columns.. CUSTOMERKEY                    int64
+DATECREATED           datetime64[ns]
+ISMIGRATED                     int64
+PROSPECTKEY                  float64
+RENTALAPPLICANTKEY           float64
+RESIDENTKEY                  float64
+ISACTIVE                       int64
+PAYMENTPLATFORM                int64
+dtype: object
+[2023-09-29T18:04:16.115+0000] {retrive_conn.py:301} INFO - fixing date cols columns.. ['DATECREATED']
+[2023-09-29T18:04:17.258+0000] {connection.py:581} INFO - closed
+[2023-09-29T18:04:17.259+0000] {connection.py:584} INFO - No async queries seem to be running, deleting session
+[2023-09-29T18:04:18.693+0000] {retrive_conn.py:307} INFO - fixing date columns.. CUSTOMERKEY                         int64
+DATECREATED           datetime64[ns, UTC]
+ISMIGRATED                          int64
+PROSPECTKEY                       float64
+RENTALAPPLICANTKEY                float64
+RESIDENTKEY                       float64
+ISACTIVE                            int64
+PAYMENTPLATFORM                     int64
+dtype: object
+[2023-09-29T18:04:18.693+0000] {retrive_conn.py:579} INFO - fixing boolean columns..  IsMigrated  IsActive  
+[2023-09-29T18:04:19.910+0000] {retrive_conn.py:595} INFO - fixing varchar columns..  
+[2023-09-29T18:04:23.831+0000] {retrive_conn.py:514} INFO - data cleanup completed and number of records in table 100000 and number of columns 8
+[2023-09-29T18:04:23.832+0000] {cursor.py:727} INFO - query: [CREATE TEMP STAGE /* Python:snowflake.connector.pandas_tools.write_pandas() */ "...]
+[2023-09-29T18:04:23.923+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:23.924+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:25.258+0000] {cursor.py:727} INFO - query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+[2023-09-29T18:04:25.618+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:27.448+0000] {cursor.py:727} INFO - query: [COPY INTO "TRIPOD_CUSTOMERS" /* Python:snowflake.connector.pandas_tools.write_pa...]
+[2023-09-29T18:04:28.706+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:28.707+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:28.707+0000] {snowflake_interaction.py:483} INFO - Data written to TRIPOD_CUSTOMERS table successfully True -- number of chunks 1 -- total rows 100000
+[2023-09-29T18:04:28.707+0000] {snowflake_interaction.py:445} INFO - Data written to TRIPOD_CUSTOMERS table
+[2023-09-29T18:04:28.707+0000] {snowflake_interaction.py:447} INFO - Written data to Snowflake table --> Customers --> chunk 3
+[2023-09-29T18:04:28.708+0000] {snowflake_interaction.py:448} INFO - next set of data will be fetched from 300000 row
+[2023-09-29T18:04:28.708+0000] {snowflake_interaction.py:450} INFO - data load for table complete  --> Customers
+[2023-09-29T18:04:32.034+0000] {snowflake_interaction.py:427} INFO - Data fetch and each Chunk 3 --> (100000, 8)
+[2023-09-29T18:04:32.034+0000] {snowflake_interaction.py:429} INFO - Data fetched for the Chunk 3 --> (100000, 8)
+[2023-09-29T18:04:32.066+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-09-29T18:04:32.067+0000] {logging_mixin.py:137} INFO - conn.get_extra ---> {"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}
+[2023-09-29T18:04:32.069+0000] {logging_mixin.py:137} INFO - snowflake_conn {'account': 'sta98695', 'user': 'devops', 'password': '***', 'warehouse': 'COMPUTE_WH', 'database': 'DEV', 'schema': 'LANDING', 'config_tables_to_be_replicatedg': None, 'landing_table_prefix': 'WP', '_extras': '{"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}'}
+[2023-09-29T18:04:32.069+0000] {connection.py:280} INFO - Snowflake Connector for Python Version: 3.0.0, Python Version: 3.10.12, Platform: Linux-6.2.0-1011-aws-x86_64-with-glibc2.35
+[2023-09-29T18:04:32.070+0000] {connection.py:974} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-09-29T18:04:32.535+0000] {snowflake_interaction.py:52} INFO - snowflake connection completed.. snowflake_conn
+[2023-09-29T18:04:32.535+0000] {logging_mixin.py:137} INFO - connection closed
+[2023-09-29T18:04:32.536+0000] {retrive_conn.py:483} INFO - data cleanup process started.. (100000, 8)
+[2023-09-29T18:04:32.537+0000] {retrive_conn.py:296} INFO - fixing date columns.. CUSTOMERKEY                    int64
+DATECREATED           datetime64[ns]
+ISMIGRATED                     int64
+PROSPECTKEY                  float64
+RENTALAPPLICANTKEY           float64
+RESIDENTKEY                  float64
+ISACTIVE                       int64
+PAYMENTPLATFORM                int64
+dtype: object
+[2023-09-29T18:04:32.538+0000] {retrive_conn.py:301} INFO - fixing date cols columns.. ['DATECREATED']
+[2023-09-29T18:04:34.051+0000] {connection.py:581} INFO - closed
+[2023-09-29T18:04:34.052+0000] {connection.py:584} INFO - No async queries seem to be running, deleting session
+[2023-09-29T18:04:34.837+0000] {retrive_conn.py:307} INFO - fixing date columns.. CUSTOMERKEY                         int64
+DATECREATED           datetime64[ns, UTC]
+ISMIGRATED                          int64
+PROSPECTKEY                       float64
+RENTALAPPLICANTKEY                float64
+RESIDENTKEY                       float64
+ISACTIVE                            int64
+PAYMENTPLATFORM                     int64
+dtype: object
+[2023-09-29T18:04:34.837+0000] {retrive_conn.py:579} INFO - fixing boolean columns..  IsMigrated  IsActive  
+[2023-09-29T18:04:36.009+0000] {retrive_conn.py:595} INFO - fixing varchar columns..  
+[2023-09-29T18:04:40.087+0000] {retrive_conn.py:514} INFO - data cleanup completed and number of records in table 100000 and number of columns 8
+[2023-09-29T18:04:40.087+0000] {cursor.py:727} INFO - query: [CREATE TEMP STAGE /* Python:snowflake.connector.pandas_tools.write_pandas() */ "...]
+[2023-09-29T18:04:40.180+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:40.181+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:42.153+0000] {cursor.py:727} INFO - query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+[2023-09-29T18:04:42.529+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:43.335+0000] {cursor.py:727} INFO - query: [COPY INTO "TRIPOD_CUSTOMERS" /* Python:snowflake.connector.pandas_tools.write_pa...]
+[2023-09-29T18:04:44.565+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:44.566+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:44.567+0000] {snowflake_interaction.py:483} INFO - Data written to TRIPOD_CUSTOMERS table successfully True -- number of chunks 1 -- total rows 100000
+[2023-09-29T18:04:44.567+0000] {snowflake_interaction.py:445} INFO - Data written to TRIPOD_CUSTOMERS table
+[2023-09-29T18:04:44.567+0000] {snowflake_interaction.py:447} INFO - Written data to Snowflake table --> Customers --> chunk 4
+[2023-09-29T18:04:44.567+0000] {snowflake_interaction.py:448} INFO - next set of data will be fetched from 400000 row
+[2023-09-29T18:04:44.567+0000] {snowflake_interaction.py:450} INFO - data load for table complete  --> Customers
+[2023-09-29T18:04:47.619+0000] {snowflake_interaction.py:427} INFO - Data fetch and each Chunk 4 --> (100000, 8)
+[2023-09-29T18:04:47.619+0000] {snowflake_interaction.py:429} INFO - Data fetched for the Chunk 4 --> (100000, 8)
+[2023-09-29T18:04:47.663+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-09-29T18:04:47.664+0000] {logging_mixin.py:137} INFO - conn.get_extra ---> {"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}
+[2023-09-29T18:04:47.666+0000] {logging_mixin.py:137} INFO - snowflake_conn {'account': 'sta98695', 'user': 'devops', 'password': '***', 'warehouse': 'COMPUTE_WH', 'database': 'DEV', 'schema': 'LANDING', 'config_tables_to_be_replicatedg': None, 'landing_table_prefix': 'WP', '_extras': '{"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}'}
+[2023-09-29T18:04:47.666+0000] {connection.py:280} INFO - Snowflake Connector for Python Version: 3.0.0, Python Version: 3.10.12, Platform: Linux-6.2.0-1011-aws-x86_64-with-glibc2.35
+[2023-09-29T18:04:47.667+0000] {connection.py:974} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-09-29T18:04:48.284+0000] {snowflake_interaction.py:52} INFO - snowflake connection completed.. snowflake_conn
+[2023-09-29T18:04:48.284+0000] {logging_mixin.py:137} INFO - connection closed
+[2023-09-29T18:04:48.285+0000] {retrive_conn.py:483} INFO - data cleanup process started.. (100000, 8)
+[2023-09-29T18:04:48.286+0000] {retrive_conn.py:296} INFO - fixing date columns.. CUSTOMERKEY                    int64
+DATECREATED           datetime64[ns]
+ISMIGRATED                     int64
+PROSPECTKEY                  float64
+RENTALAPPLICANTKEY           float64
+RESIDENTKEY                  float64
+ISACTIVE                       int64
+PAYMENTPLATFORM                int64
+dtype: object
+[2023-09-29T18:04:48.287+0000] {retrive_conn.py:301} INFO - fixing date cols columns.. ['DATECREATED']
+[2023-09-29T18:04:49.848+0000] {connection.py:581} INFO - closed
+[2023-09-29T18:04:49.849+0000] {connection.py:584} INFO - No async queries seem to be running, deleting session
+[2023-09-29T18:04:50.755+0000] {retrive_conn.py:307} INFO - fixing date columns.. CUSTOMERKEY                         int64
+DATECREATED           datetime64[ns, UTC]
+ISMIGRATED                          int64
+PROSPECTKEY                       float64
+RENTALAPPLICANTKEY                float64
+RESIDENTKEY                       float64
+ISACTIVE                            int64
+PAYMENTPLATFORM                     int64
+dtype: object
+[2023-09-29T18:04:50.755+0000] {retrive_conn.py:579} INFO - fixing boolean columns..  IsMigrated  IsActive  
+[2023-09-29T18:04:52.055+0000] {retrive_conn.py:595} INFO - fixing varchar columns..  
+[2023-09-29T18:04:56.195+0000] {retrive_conn.py:514} INFO - data cleanup completed and number of records in table 100000 and number of columns 8
+[2023-09-29T18:04:56.195+0000] {cursor.py:727} INFO - query: [CREATE TEMP STAGE /* Python:snowflake.connector.pandas_tools.write_pandas() */ "...]
+[2023-09-29T18:04:56.310+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:56.311+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:04:58.403+0000] {cursor.py:727} INFO - query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+[2023-09-29T18:04:58.835+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:04:59.699+0000] {cursor.py:727} INFO - query: [COPY INTO "TRIPOD_CUSTOMERS" /* Python:snowflake.connector.pandas_tools.write_pa...]
+[2023-09-29T18:05:00.940+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:05:00.941+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:05:00.941+0000] {snowflake_interaction.py:483} INFO - Data written to TRIPOD_CUSTOMERS table successfully True -- number of chunks 1 -- total rows 100000
+[2023-09-29T18:05:00.941+0000] {snowflake_interaction.py:445} INFO - Data written to TRIPOD_CUSTOMERS table
+[2023-09-29T18:05:00.941+0000] {snowflake_interaction.py:447} INFO - Written data to Snowflake table --> Customers --> chunk 5
+[2023-09-29T18:05:00.941+0000] {snowflake_interaction.py:448} INFO - next set of data will be fetched from 500000 row
+[2023-09-29T18:05:00.941+0000] {snowflake_interaction.py:450} INFO - data load for table complete  --> Customers
+[2023-09-29T18:05:03.737+0000] {snowflake_interaction.py:427} INFO - Data fetch and each Chunk 5 --> (100000, 8)
+[2023-09-29T18:05:03.737+0000] {snowflake_interaction.py:429} INFO - Data fetched for the Chunk 5 --> (100000, 8)
+[2023-09-29T18:05:03.786+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-09-29T18:05:03.787+0000] {logging_mixin.py:137} INFO - conn.get_extra ---> {"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}
+[2023-09-29T18:05:03.789+0000] {logging_mixin.py:137} INFO - snowflake_conn {'account': 'sta98695', 'user': 'devops', 'password': '***', 'warehouse': 'COMPUTE_WH', 'database': 'DEV', 'schema': 'LANDING', 'config_tables_to_be_replicatedg': None, 'landing_table_prefix': 'WP', '_extras': '{"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}'}
+[2023-09-29T18:05:03.789+0000] {connection.py:280} INFO - Snowflake Connector for Python Version: 3.0.0, Python Version: 3.10.12, Platform: Linux-6.2.0-1011-aws-x86_64-with-glibc2.35
+[2023-09-29T18:05:03.789+0000] {connection.py:974} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-09-29T18:05:04.252+0000] {snowflake_interaction.py:52} INFO - snowflake connection completed.. snowflake_conn
+[2023-09-29T18:05:04.252+0000] {logging_mixin.py:137} INFO - connection closed
+[2023-09-29T18:05:04.253+0000] {retrive_conn.py:483} INFO - data cleanup process started.. (100000, 8)
+[2023-09-29T18:05:04.256+0000] {retrive_conn.py:296} INFO - fixing date columns.. CUSTOMERKEY                    int64
+DATECREATED           datetime64[ns]
+ISMIGRATED                     int64
+PROSPECTKEY                  float64
+RENTALAPPLICANTKEY           float64
+RESIDENTKEY                  float64
+ISACTIVE                       int64
+PAYMENTPLATFORM                int64
+dtype: object
+[2023-09-29T18:05:04.258+0000] {retrive_conn.py:301} INFO - fixing date cols columns.. ['DATECREATED']
+[2023-09-29T18:05:05.704+0000] {connection.py:581} INFO - closed
+[2023-09-29T18:05:05.704+0000] {connection.py:584} INFO - No async queries seem to be running, deleting session
+[2023-09-29T18:05:06.563+0000] {retrive_conn.py:307} INFO - fixing date columns.. CUSTOMERKEY                         int64
+DATECREATED           datetime64[ns, UTC]
+ISMIGRATED                          int64
+PROSPECTKEY                       float64
+RENTALAPPLICANTKEY                float64
+RESIDENTKEY                       float64
+ISACTIVE                            int64
+PAYMENTPLATFORM                     int64
+dtype: object
+[2023-09-29T18:05:06.568+0000] {retrive_conn.py:579} INFO - fixing boolean columns..  IsMigrated  IsActive  
+[2023-09-29T18:05:07.877+0000] {retrive_conn.py:595} INFO - fixing varchar columns..  
+[2023-09-29T18:05:11.768+0000] {retrive_conn.py:514} INFO - data cleanup completed and number of records in table 100000 and number of columns 8
+[2023-09-29T18:05:11.769+0000] {cursor.py:727} INFO - query: [CREATE TEMP STAGE /* Python:snowflake.connector.pandas_tools.write_pandas() */ "...]
+[2023-09-29T18:05:11.849+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:05:11.850+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:05:13.779+0000] {cursor.py:727} INFO - query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+[2023-09-29T18:05:14.157+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:05:14.914+0000] {cursor.py:727} INFO - query: [COPY INTO "TRIPOD_CUSTOMERS" /* Python:snowflake.connector.pandas_tools.write_pa...]
+[2023-09-29T18:05:16.471+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:05:16.472+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:05:16.472+0000] {snowflake_interaction.py:483} INFO - Data written to TRIPOD_CUSTOMERS table successfully True -- number of chunks 1 -- total rows 100000
+[2023-09-29T18:05:16.472+0000] {snowflake_interaction.py:445} INFO - Data written to TRIPOD_CUSTOMERS table
+[2023-09-29T18:05:16.472+0000] {snowflake_interaction.py:447} INFO - Written data to Snowflake table --> Customers --> chunk 6
+[2023-09-29T18:05:16.473+0000] {snowflake_interaction.py:448} INFO - next set of data will be fetched from 600000 row
+[2023-09-29T18:05:16.473+0000] {snowflake_interaction.py:450} INFO - data load for table complete  --> Customers
+[2023-09-29T18:05:19.342+0000] {snowflake_interaction.py:427} INFO - Data fetch and each Chunk 6 --> (100000, 8)
+[2023-09-29T18:05:19.343+0000] {snowflake_interaction.py:429} INFO - Data fetched for the Chunk 6 --> (100000, 8)
+[2023-09-29T18:05:19.382+0000] {base.py:73} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2023-09-29T18:05:19.383+0000] {logging_mixin.py:137} INFO - conn.get_extra ---> {"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}
+[2023-09-29T18:05:19.385+0000] {logging_mixin.py:137} INFO - snowflake_conn {'account': 'sta98695', 'user': 'devops', 'password': '***', 'warehouse': 'COMPUTE_WH', 'database': 'DEV', 'schema': 'LANDING', 'config_tables_to_be_replicatedg': None, 'landing_table_prefix': 'WP', '_extras': '{"account": "sta98695", "warehouse": "COMPUTE_WH", "database": "DEV", "role": "ACCOUNTADMIN", "insecure_mode": false, "config_tables_to_be_replicated": "WORDPRESS_TABLES_LANDING", "landing_table_prefix": "WP", "region": "null"}'}
+[2023-09-29T18:05:19.385+0000] {connection.py:280} INFO - Snowflake Connector for Python Version: 3.0.0, Python Version: 3.10.12, Platform: Linux-6.2.0-1011-aws-x86_64-with-glibc2.35
+[2023-09-29T18:05:19.385+0000] {connection.py:974} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2023-09-29T18:05:20.004+0000] {snowflake_interaction.py:52} INFO - snowflake connection completed.. snowflake_conn
+[2023-09-29T18:05:20.005+0000] {logging_mixin.py:137} INFO - connection closed
+[2023-09-29T18:05:20.006+0000] {retrive_conn.py:483} INFO - data cleanup process started.. (100000, 8)
+[2023-09-29T18:05:20.007+0000] {retrive_conn.py:296} INFO - fixing date columns.. CUSTOMERKEY                    int64
+DATECREATED           datetime64[ns]
+ISMIGRATED                     int64
+PROSPECTKEY                  float64
+RENTALAPPLICANTKEY           float64
+RESIDENTKEY                  float64
+ISACTIVE                       int64
+PAYMENTPLATFORM                int64
+dtype: object
+[2023-09-29T18:05:20.008+0000] {retrive_conn.py:301} INFO - fixing date cols columns.. ['DATECREATED']
+[2023-09-29T18:05:21.567+0000] {connection.py:581} INFO - closed
+[2023-09-29T18:05:21.567+0000] {connection.py:584} INFO - No async queries seem to be running, deleting session
+[2023-09-29T18:05:22.477+0000] {retrive_conn.py:307} INFO - fixing date columns.. CUSTOMERKEY                         int64
+DATECREATED           datetime64[ns, UTC]
+ISMIGRATED                          int64
+PROSPECTKEY                       float64
+RENTALAPPLICANTKEY                float64
+RESIDENTKEY                       float64
+ISACTIVE                            int64
+PAYMENTPLATFORM                     int64
+dtype: object
+[2023-09-29T18:05:22.478+0000] {retrive_conn.py:579} INFO - fixing boolean columns..  IsMigrated  IsActive  
+[2023-09-29T18:05:23.646+0000] {retrive_conn.py:595} INFO - fixing varchar columns..  
+[2023-09-29T18:05:27.658+0000] {retrive_conn.py:514} INFO - data cleanup completed and number of records in table 100000 and number of columns 8
+[2023-09-29T18:05:27.659+0000] {cursor.py:727} INFO - query: [CREATE TEMP STAGE /* Python:snowflake.connector.pandas_tools.write_pandas() */ "...]
+[2023-09-29T18:05:27.752+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:05:27.753+0000] {cursor.py:878} INFO - Number of results in first chunk: 1
+[2023-09-29T18:05:29.870+0000] {cursor.py:727} INFO - query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+[2023-09-29T18:05:30.224+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:05:30.993+0000] {cursor.py:727} INFO - query: [COPY INTO "TRIPOD_CUSTOMERS" /* Python:snowflake.connector.pandas_tools.write_pa...]
+[2023-09-29T18:05:31.068+0000] {local_task_job.py:272} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-09-29T18:05:31.074+0000] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 3126937. PIDs of all processes in the group: [3126937]
+[2023-09-29T18:05:31.074+0000] {process_utils.py:84} INFO - Sending the signal Signals.SIGTERM to group 3126937
+[2023-09-29T18:05:31.074+0000] {taskinstance.py:1479} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-09-29T18:05:31.078+0000] {logging_mixin.py:137} INFO - Task received SIGTERM signal
+[2023-09-29T18:05:31.078+0000] {logging_mixin.py:137} INFO - Error while converting column names to upper case or column heads are missing
+[2023-09-29T18:05:31.105+0000] {snowflake_interaction.py:453} ERROR - Error load for table complete  --> Customers --> Error while writing data to TRIPOD_CUSTOMERS table
+[2023-09-29T18:05:31.119+0000] {snowflake_interaction.py:525} INFO - null_PII_cols in snowflake table function is running
+[2023-09-29T18:05:31.119+0000] {snowflake_interaction.py:530} INFO - snowflake connection is active.. 
+[2023-09-29T18:05:31.120+0000] {cursor.py:727} INFO - query: [show columns in TRIPOD_CUSTOMERS]
+[2023-09-29T18:05:31.244+0000] {cursor.py:740} INFO - query execution done
+[2023-09-29T18:05:31.245+0000] {cursor.py:878} INFO - Number of results in first chunk: 8
+[2023-09-29T18:05:31.245+0000] {logging_mixin.py:137} INFO - NULL PII columns finally block executed
+[2023-09-29T18:05:31.245+0000] {Tripod_Pull_Selected_Tables.py:86} INFO - NULL PII columns finally block executed
+[2023-09-29T18:05:32.233+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-09-29T18:05:32.299+0000] {taskinstance.py:1318} INFO - Marking task as SUCCESS. dag_id=Landing_TriPOD_full_load, task_id=task_group_0.copy_CUSTOMERS_to_snowflake, execution_date=20230929T180314, start_date=20230929T180359, end_date=20230929T180532
+[2023-09-29T18:05:32.475+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=3126937, status='terminated', exitcode=0, started='18:03:58') (3126937) terminated with exit code 0
